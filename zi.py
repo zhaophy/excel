@@ -6,13 +6,14 @@ from xlutils.copy import copy
 import openpyxl
 import string
 
-data_a = [{'name':'echo_one','age':'56','rank':'A','Class':'9'},{'name':'echo_two','age':'47','rank':'A','Class':'9'},{'name':'echo_three','age':'44','rank':'B+','Class':'9'}]
+data_a = [{'name':'echo_one','age':'56','rank':'A','Class':'9'},{'name':'echo_two','age':'47','rank':'A','Class':'9'},{'age':'44','rank':'B+','Class':'9','name':'echo_three'}]
+
 print data_a[0].values()
 print data_a[0].keys()
 print data_a[0].values()[ 2 - 1 ]
 letters = string.uppercase
 data_b = [{'base':'sword','cat':'cat-5','level':'11'},{'base':'blade','cat':'cat-3','level':'15'},{'base':'shield','cat':'cat-11','level':'331'}]
-
+print letters
 
 
 def excel_ins(file_path,sheet,list):
@@ -26,6 +27,8 @@ def excel_ins(file_path,sheet,list):
         for j in range(1, len(list) + 1):
             ws['%s%s' % (letters[i - 1], j + 1)] = list[j - 1].values()[i - 1] #其余行插入数据
     r.save(file_path)
-excel_ins('/Users/zhaophy/untitled2/ok.xlsx','ok',data_a)
+excel_ins('F:\excel\ok.xlsx','ok',data_a)
 
+
+print data_a[0].keys()[1]
 
